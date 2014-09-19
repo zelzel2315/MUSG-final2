@@ -68,16 +68,16 @@ makeups = Makeup.create([
   ])
 
 
-reviews = Review.create([
-  {foundation_id: "Tarte Powderful Amazonian Clay Pressed Mineral Powder Medium 08", rating: "4", comment: "It's a lightweight powder that goes on lightly as well. Good for basic everyday use, but not for heavy duty coverup. Matches pretty well."},
-  # {foundation_id: "Tarte Powderful Amazonian Clay Pressed Mineral Powder Medium 08", rating: "4", comment: "It's a lightweight powder that goes on lightly as well. Good for basic everyday use, but not for heavy duty coverup. Matches pretty well."},
-  # {foundation_id: "Tarte Powderful Amazonian Clay Pressed Mineral Powder Medium 08", rating: "4", comment: "It's a lightweight powder that goes on lightly as well. Good for basic everyday use, but not for heavy duty coverup. Matches pretty well."},
-  # {foundation_id: "Tarte Powderful Amazonian Clay Pressed Mineral Powder Medium 08", rating: "4", comment: "It's a lightweight powder that goes on lightly as well. Good for basic everyday use, but not for heavy duty coverup. Matches pretty well."},
-  # {foundation_id: "Tarte Powderful Amazonian Clay Pressed Mineral Powder Medium 08", rating: "4", comment: "It's a lightweight powder that goes on lightly as well. Good for basic everyday use, but not for heavy duty coverup. Matches pretty well."},
-  # {foundation_id: "Tarte Powderful Amazonian Clay Pressed Mineral Powder Medium 08", rating: "4", comment: "It's a lightweight powder that goes on lightly as well. Good for basic everyday use, but not for heavy duty coverup. Matches pretty well."}
+# reviews = Review.create([
+#   {foundation_id: "Tarte Powderful Amazonian Clay Pressed Mineral Powder Medium 08", rating: "4", comment: "It's a lightweight powder that goes on lightly as well. Good for basic everyday use, but not for heavy duty coverup. Matches pretty well."},
+#   # {foundation_id: "Tarte Powderful Amazonian Clay Pressed Mineral Powder Medium 08", rating: "4", comment: "It's a lightweight powder that goes on lightly as well. Good for basic everyday use, but not for heavy duty coverup. Matches pretty well."},
+#   # {foundation_id: "Tarte Powderful Amazonian Clay Pressed Mineral Powder Medium 08", rating: "4", comment: "It's a lightweight powder that goes on lightly as well. Good for basic everyday use, but not for heavy duty coverup. Matches pretty well."},
+#   # {foundation_id: "Tarte Powderful Amazonian Clay Pressed Mineral Powder Medium 08", rating: "4", comment: "It's a lightweight powder that goes on lightly as well. Good for basic everyday use, but not for heavy duty coverup. Matches pretty well."},
+#   # {foundation_id: "Tarte Powderful Amazonian Clay Pressed Mineral Powder Medium 08", rating: "4", comment: "It's a lightweight powder that goes on lightly as well. Good for basic everyday use, but not for heavy duty coverup. Matches pretty well."},
+#   # {foundation_id: "Tarte Powderful Amazonian Clay Pressed Mineral Powder Medium 08", rating: "4", comment: "It's a lightweight powder that goes on lightly as well. Good for basic everyday use, but not for heavy duty coverup. Matches pretty well."}
 
 
-])
+# ])
 
 # 1. clinique, perfectly real makeup, shade 24
 # 2. 3
