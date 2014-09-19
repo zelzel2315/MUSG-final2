@@ -1,4 +1,6 @@
 class MakeupsController < ApplicationController
+  before_action :set_makeup, only: [:show, :edit, :update, :destroy]
+
   def index
     @makeups = Makeup.all
   end
@@ -59,6 +61,10 @@ class MakeupsController < ApplicationController
   end
 
   private
+  def set_makeup
+    @makeup = Makeup.find(params[:id])
+  end
+
   def makeup_params
     params.require(:makeup).permit(:brand, :product, :shade)
   end
