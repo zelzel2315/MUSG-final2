@@ -1,5 +1,6 @@
 class UserMakeupsController < ApplicationController
   def index
+    @user_makeups = UserMakeup.all
   end
 
   def new

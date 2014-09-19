@@ -1,0 +1,12 @@
+Add a new makeup
+
+<%= form_for @makeup do |f| %>
+	<%= f.text_field :brand, placeholder: "Brand" %>
+	<%= f.text_field :product, placeholder: "Product" %>
+	<%= f.text_field :shade, placeholder: "Shade" %>
+
+	<%= f.submit "Add new makeup" %>
+
+<% end %>
+
+<%= link_to "Back to makeup list", makeups_path %>
