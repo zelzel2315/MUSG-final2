@@ -13,9 +13,9 @@ Makeup form
 		</div>
 		<% end %>
 
-	<%= f.collection_select :brand, Makeup.all, :id, :brand, placeholder: "Brand" %>
-	<%= f.collection_select :product, Makeup.all, :id, :product, placeholder: "Product" %>
-	<%= f.collection_select :shade, Makeup.all, :id, :shade, placeholder: "Shade" %>
+	<%= f.text_field :brand, placeholder: "Brand" %>
+	<%= f.text_field :product, placeholder: "Product" %>
+	<%= f.text_field :shade, placeholder: "Shade" %>
 
 	<%= f.submit "Submit" %>
 
