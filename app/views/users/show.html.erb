@@ -1,3 +1,11 @@
-<%= link_to 'Add new makeup', makeups_path %>
+ <% if current_user %>
+  Welcome, <%= current_user.name %>
+  <% else %>
+ redirect_to root_path
+ <% end %>
 
+
+<br>
 <%= current_user.brand %>
+<br>
+<%= link_to 'Add new makeup', makeups_path %>
