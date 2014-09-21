@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     # for makeup_list.each do |m|
     #   makeup_item = m.brand + " " + m.product + " " + m.shade
     #   makeup_list.push(makeup_item)
-    # end
+    # end 
   end
 
   def create
