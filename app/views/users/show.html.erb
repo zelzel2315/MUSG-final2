@@ -3,9 +3,9 @@
 
 
 
-<% @user.makeups.each do |one_makeup| %>
-<%= one_makeup.name %><br>
- <%= collection_check_boxes :makeup_id, Makeup.all, :id, :brand %>
+<% current_user(@makeup) each do |m| %>
+<%= m.name %><br>
+<%= m.brand %><br>
 
 <%end%>
 <br>

@@ -6,11 +6,6 @@ class UsersController < ApplicationController
 
   def new 
     @user = User.new
-    # @makeup_list = Array.new
-    # for makeup_list.each do |m|
-    #   makeup_item = m.brand + " " + m.product + " " + m.shade
-    #   makeup_list.push(makeup_item)
-    # end 
   end
 
   def create
@@ -25,7 +20,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # @makeup = current_user.makeups 
+    @makeup = current_user.makeups 
   end
 
   def edit
