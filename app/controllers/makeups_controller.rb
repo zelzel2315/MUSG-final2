@@ -66,7 +66,7 @@ class MakeupsController < ApplicationController
   end
 
   def makeup_params
-    params.require(:makeup).permit(:brand, :product, :shade)
+    params.require(:makeup).permit(:brand, :product, :shade, :true_shade)
   end
 
 end

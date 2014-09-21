@@ -1,1 +1,14 @@
-<%= link_to 'Add new makeup', makeups_path %>
+<h1><%= @user.name %></h1>
+ 
+
+
+
+<% @user.makeups.each do |one_makeup| %>
+<%= one_makeup.name %><br>
+ <%= collection_check_boxes :makeup_id, Makeup.all, :id, :brand %>
+
+<%end%>
+<br>
+<br>
+<%= link_to "Delete", :user, method: :delete, data: { confirm: "Are you sure you want to delete #{@user.name}?"} %>
+<br>

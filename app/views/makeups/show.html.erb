@@ -6,3 +6,6 @@
 <%= link_to 'Add a makeup', new_makeup_path %>
 
 <%= link_to "Back to makeup list", makeups_path %>
+
+  <%= f.collection_check_boxes :makeup_ids, Makeup.all, :id, :brand %>
+
