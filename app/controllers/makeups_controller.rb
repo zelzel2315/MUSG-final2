@@ -7,11 +7,12 @@ class MakeupsController < ApplicationController
 
   def new
     @makeup = Makeup.new
+    @makeup = current_user.makeups.new
   end
 
   def create
-    @makeup = Makeup.new(makeup_params)
-
+    # @makeup = Makeup.new(makeup_params)
+    @makeup = current_user.makeups.new(makeup_params)
     respond_to do |format|
       if @makeup.save
         # session[:makeup_id] = @makeup.id.to_s
@@ -67,7 +68,7 @@ class MakeupsController < ApplicationController
   end
 
   def makeup_params
-    params.require(:makeup).permit(:brand, :product, :shade)
+    params.require(:makeup).permit(:brand, :product, :shade, :user_id)
   end
 
 end
