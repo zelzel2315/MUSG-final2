@@ -4,15 +4,19 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def new
+  def new 
     @user = User.new
+    # @makeup_list = Array.new
+    # for makeup_list.each do |m|
+    #   makeup_item = m.brand + " " + m.product + " " + m.shade
+    #   makeup_list.push(makeup_item)
+    # end
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id.to_s
-      redirect_to user_path(@user)
     else
       render 'new'
     end
@@ -46,6 +50,6 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(
-      :name, :email, :password, :password_confirmation)
+      :name, :email, :password, :password_confirmation, :brand, :product, :shade)
   end
 end

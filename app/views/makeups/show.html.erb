@@ -1,4 +1,4 @@
-<%= @makeup.brand %>
+<%= @makeup.brand_id.to_s %>
 <%= @makeup.product %>
 <%= @makeup.shade %>
 
@@ -6,3 +6,5 @@
 <%= link_to 'Add a makeup', new_makeup_path %>
 
 <%= link_to "Back to makeup list", makeups_path %>
+
+<%= link_to "Back to your list", user_path %>
