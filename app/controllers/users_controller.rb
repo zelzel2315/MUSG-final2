@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id.to_s
+      redirect_to user_path(@user)
     else
       render 'new'
     end
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # @makeups = @user.makeups 
+    # @makeup = current_user.makeups 
   end
 
   def edit
@@ -50,6 +51,6 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(
-      :name, :email, :password, :password_confirmation, :brand, :product, :shade)
+      :name, :email, :password, :password_confirmation, :brand, :product, :shade, :true_shade)
   end
 end
