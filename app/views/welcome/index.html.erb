@@ -1,8 +1,52 @@
-<h1> Makeup Shade Guide </h1>
+
+
+<div class="title">
+  <h1> Makeup Shade Guide </h1>
+</div>
 
 <div class="users">
-  <%= link_to 'Login', new_session_path %>
-  <br>
+  <%= link_to 'Login', new_session_path %> or
   <%= link_to 'Sign Up', new_user_path %>
 </div>
 
+<div id="headcontain" class="row">
+  <div class="large-12 small-8" data-orbit>
+    <li>
+      <%= image_tag("f1.jpg", :alt => "") %>
+    </li>
+    <li class="active">
+      <%= image_tag("f2.jpg", :alt => "") %>
+    </li>
+    <li>
+      <%= image_tag("f3.jpg", :alt => "") %>
+    </li>
+  </div>
+</div>
+
+<div id="topcontain" class="row">
+  <div class="small-10 large-3 columns" data-orbit>
+    <li>
+      <%= image_tag("f1.jpg", :alt => "") %>
+    </li>
+    <li class="active">
+      <%= image_tag("f2.jpg", :alt => "") %>
+    </li>
+    <li>
+      <%= image_tag("f3.jpg", :alt => "") %>
+    </li>
+  </div>
+</div>
+
+<div id="bottomcontain" class="row">
+  <div class="large-5 small-8" data-orbit>
+    <li>
+      <%= image_tag("f1.jpg", :alt => "") %>
+    </li>
+    <li class="active">
+      <%= image_tag("f2.jpg", :alt => "") %>
+    </li>
+    <li>
+      <%= image_tag("f3.jpg", :alt => "") %>
+    </li>
+  </div>
+</div>
