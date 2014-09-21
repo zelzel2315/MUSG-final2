@@ -66,8 +66,8 @@ makeups = Makeup.create([
  
   ])
 
-my_id = true_shade.find([:name])
-true_shade_id:"[true_shade.id]"
+# my_id = true_shade.find([:name])
+# true_shade_id:"[true_shade.id]"
 
 
 
