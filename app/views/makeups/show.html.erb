@@ -1,4 +1,4 @@
-<%= @makeup.brand %>
+<%= @makeup.brand_id.to_s %>
 <%= @makeup.product %>
 <%= @makeup.shade %>
 
@@ -9,3 +9,5 @@
 
   <%= f.collection_check_boxes :makeup_ids, Makeup.all, :id, :brand %>
 
+<%= link_to "Back to your list", user_path %>
+>>>>>>> b3d80f88effbc16e8014ed9ab806587a9c69b01c

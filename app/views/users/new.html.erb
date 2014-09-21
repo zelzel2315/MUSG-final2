@@ -20,10 +20,9 @@
         </div>
         
         <div class="form-group">
+        <%= f.collection_select :brand, Makeup.all, :id, :makeup_name, placeholder: "Brand" %>
+        </div>
+        <div class="form-group"> 
           <%= f.submit "Sign up" %>
         </div>
       <% end %>
-
-
-
-<%#= link_to 'Log Out', session_path, method: :delete %>
