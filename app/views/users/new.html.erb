@@ -19,7 +19,7 @@
           <%= f.password_field :password_confirmation, placeholder: "confirm your password", class: 'form-control' %>
         </div>
         <div class="form-group">
-        <%= f.collection_select :brand, Makeup.all, :id, :makeup_name, placeholder: "Brand" %>
+        <%= f.collection_select :brand, Makeup.all, :makeup_name, :makeup_name, placeholder: "Brand" %>
         </div>
         <div class="form-group"> 
           <%= f.submit "Sign up" %>
