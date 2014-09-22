@@ -1,4 +1,4 @@
-trueshades = TrueShade.create([
+shades = TrueShade.create([
   {name: "Very-Fair", description: "Very-fair means you fall in the pale skin color range. You sunburn almost insantly and must have skin protection all the time. Your skin is a porcelain color that is almost clear."},
   {name: "Fair 1", description: "Fair 1 means you fall in the fair skin color range. You sunburn very easily and get freckles when you burn. Your skin is a pale porcelain color with a blue undertone."},
   {name: "Fair 2", description: "Fair 2 means you fall in the fair skin color range. You sunburn very easily and get freckles when you burn. Your skin is a pale porcelain color with a green undertone."},
