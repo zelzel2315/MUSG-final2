@@ -18,7 +18,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    raise user_params.inspect
     @user = User.new(user_params)
     # respond_to do |format|
     #   if @user.save

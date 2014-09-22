@@ -13,8 +13,8 @@ class MakeupsController < ApplicationController
   end
 
   def create
-    # @makeup = Makeup.new(makeup_params)
-    @makeup = current_user.makeups.new(makeup_params)
+    @makeup = Makeup.new(makeup_params)
+    @makeup = current_user.makeups.create!(makeup_id: @makeup.id)
     respond_to do |format|
       if @makeup.save
         # session[:makeup_id] = @makeup.id.to_s

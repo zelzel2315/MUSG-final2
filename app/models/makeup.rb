@@ -1,5 +1,5 @@
 class Makeup < ActiveRecord::Base
-  belongs_to :true_shade
+  # belongs_to :true_shade
 
   has_many :user_makeups
   has_many :users, through: :user_makeups
