@@ -6,16 +6,31 @@ class UsersController < ApplicationController
 
   def new 
     @user = User.new
+    # @user.user_makeups.build(name: '1').build_makeup
+    # @user.user_makeups.build(name: '2').build_makeup
+    # @makeup_list = Array.new
+    # for makeup_list.each do |m|
+    #   makeup_item = m.brand + " " + m.product + " " + m.shade
+    #   makeup_list.push(makeup_item)
+    # end 
   end
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      session[:user_id] = @user.id.to_s
-      redirect_to user_path(@user)
-    else
-      render 'new'
-    end
+    # respond_to do |format|
+    #   if @user.save
+    #     flash[:notice] = 'User was successfully created.'
+    #     format.html { redirect_to(@user) }
+    #   else
+    #     format.html { render :action => "new" }
+    #   end
+    # end
+      if @user.save
+        session[:user_id] = @user.id.to_s
+        redirect_to user_path(@user)
+      else
+        render 'new'
+      end
   end
 
   def show
