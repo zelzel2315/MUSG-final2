@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
   def new 
     @user = User.new
+    @user.user_makeups.build
+    @user.user_makeups.build
     # @user.user_makeups.build(name: '1').build_makeup
     # @user.user_makeups.build(name: '2').build_makeup
     # @makeup_list = Array.new
@@ -16,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    raise user_params.inspect
     @user = User.new(user_params)
     # respond_to do |format|
     #   if @user.save
@@ -35,7 +38,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # @makeup = current_user.makeups 
+    @makeup = current_user.makeups 
   end
 
   def edit
@@ -61,6 +64,6 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(
-      :name, :email, :password, :password_confirmation, :brand, :product, :shade, :true_shade)
+      :name, :email, :password, :password_confirmation, :brand, :product, :shade, :true_shade, :user_makeup_attributes => [:id, :makeup_id])
   end
 end
