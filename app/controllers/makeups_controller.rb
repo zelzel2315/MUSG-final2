@@ -1,10 +1,10 @@
 class MakeupsController < ApplicationController
   respond_to :json
-  before_action :set_makeup, only: [:show, :edit, :update, :destroy]
+  # before_action :set_makeup, only: [:show, :edit, :update, :destroy]
 
   def index
     @makeups = Makeup.all
-    respond_with @makeups, each_serializer: MakeupSerializer
+    # respond_with @makeups, each_serializer: MakeupSerializer
   end
 
   def new
@@ -65,9 +65,9 @@ class MakeupsController < ApplicationController
   end
 
   private
-  def set_makeup
-    @makeup = Makeup.find(params[:id])
-  end
+  # def set_makeup
+  #   @makeup = Makeup.find(params[:id])
+  # end
 
   def makeup_params
     params.require(:makeup).permit(:brand, :product, :shade, :user_id)

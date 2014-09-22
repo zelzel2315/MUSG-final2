@@ -7,10 +7,6 @@ MUSGFinal2::Application.routes.draw do
     resources :makeups, defaults: { format: :json }
   end
 
-  scope '/api' do
-    resources :makeups, defaults: { format: :json }
-  end
-
   root 'welcome#index'
 
 end
