@@ -1,5 +1,6 @@
 class TrueShadesController < ApplicationController
   def index
+    @true_shades = TrueShade.all
   end
 
   def new
