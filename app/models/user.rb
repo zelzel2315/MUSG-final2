@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
 
   # belongs_to :true_shade
 
-	# accepts_nested_attributes_for :user_makeups
+	accepts_nested_attributes_for :user_makeups
 
 end

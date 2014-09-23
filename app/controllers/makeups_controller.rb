@@ -14,9 +14,7 @@ class MakeupsController < ApplicationController
 
   def create
     @makeup = Makeup.new(makeup_params)
-    @makeup = current_user.makeups.create!(makeup_id: @makeup.id)
-    my_mymakeup = Makeup.where(product: @user.product).find
-
+    # @makeup = current_user.makeups.create(user_id: @user.id, makeup_id: @makeup.id)
 
     respond_to do |format|
       if @makeup.save
