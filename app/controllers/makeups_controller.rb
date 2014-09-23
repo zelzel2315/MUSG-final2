@@ -1,8 +1,10 @@
 class MakeupsController < ApplicationController
-  before_action :set_makeup, only: [:show, :edit, :update, :destroy]
+  respond_to :json
+  # before_action :set_makeup, only: [:show, :edit, :update, :destroy]
 
   def index
     @makeups = Makeup.all
+    # respond_with @makeups, each_serializer: MakeupSerializer
   end
 
   def new
@@ -11,11 +13,12 @@ class MakeupsController < ApplicationController
   end
 
   def create
-    # @makeup = Makeup.new(makeup_params)
-    @makeup = current_user.makeups.new(makeup_params)
+    @makeup = Makeup.new(makeup_params)
+    # @makeup = current_user.makeups.create(user_id: @user.id, makeup_id: @makeup.id)
+
     respond_to do |format|
       if @makeup.save
-        # session[:makeup_id] = @makeup.id.to_s
+        session[:makeup_id] = @makeup.id.to_s
         format.html { redirect_to @makeup, notice: 'Makeup was successfully created.' }
         format.json { render :show, status: :created, location: @makeup }
       else
@@ -27,16 +30,17 @@ class MakeupsController < ApplicationController
 
   def show
     @makeup = Makeup.find(params[:id])
+    # @image = Makeup.find(params[:image])
   end
 
   def edit
-    # @makeup = Makeup.new(makeup_params)
-    # if @makeup.save
-    #   session[:user_id] = @user.id.to_s
-    #   redirect_to makeup_path
-    # else
-    #   render 'new'
-    # end
+    @makeup = Makeup.new(makeup_params)
+    if @makeup.save
+      session[:user_id] = @user.id.to_s
+      redirect_to makeup_path
+    else
+      render 'new'
+    end
   end
 
   def update
@@ -63,12 +67,12 @@ class MakeupsController < ApplicationController
   end
 
   private
-  def set_makeup
-    @makeup = Makeup.find(params[:id])
-  end
+  # def set_makeup
+  #   @makeup = Makeup.find(params[:id])
+  # end
 
   def makeup_params
-    params.require(:makeup).permit(:brand, :product, :shade, :user_id)
+    params.require(:makeup).permit(:brand, :product, :shade, :user_id, :makeup_id)
   end
 
 end

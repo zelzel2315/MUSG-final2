@@ -1,7 +1,10 @@
 class Makeup < ActiveRecord::Base
-	belongs_to :user 
 
-	def makeup_name
-		"#{brand} #{product} #{shade}" 
-	end
+  has_many :users, through: :user_makeups
+  belongs_to :true_shade, foreign_key: :true_shade_id
+
+  def makeup_name
+    "#{brand} #{product} #{shade}"
+  end
+
 end

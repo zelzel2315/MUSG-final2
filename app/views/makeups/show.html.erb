@@ -1,6 +1,10 @@
 <%= @makeup.brand %>
 <%= @makeup.product %>
 <%= @makeup.shade %>
+<%= @makeup do |i| %>
+<%= i.image %>
+<% end %>
+
 
 
 <%= link_to 'Add a makeup', new_makeup_path %>
