@@ -30,39 +30,45 @@ ts = TrueShade.create([
   {name: "Deep 8", description: "Deep 8 means you fall in the darkest skin color range. You do not sunburn nor do you tan. Your skin is an espresso color with a blue-black undertone."},
   {name: "Deep 7", description: "Deep 7 means you fall in the darkest skin color range. You do not sunburn nor do you tan. Your skin is an espresso color with a red undertone."}
   ])
+
+environment_seed_file = File.join(Rails.root, 'db', 'seeds', "#{Rails.env}.rb")
+
+def seed_image(file_name)
+  File.open(File.join(Rails.root, "/app/assets/images/seed/#{file_name}.jpg"))
+end
  
 makeups = Makeup.create([
-  {brand: "Giorgio Armani", product: "Luminous Silk Foundation", shade: "13", true_shade: ts[26]},
-  {brand: "NARS", product: "Sheer Glow Foundation", shade: "Benares", true_shade: ts[26]},
-  {brand: "NARS", product: "Sheer Matte Foundation", shade: "Benares", true_shade: ts[26]},
-  {brand: "Make Up For Ever", product: "Mat Velvet + Matifying Foundation", shade: "75", true_shade: ts[26][22]},
-  {brand: "MAC", product: "Matchmaster SPF 15 Foundation", shade: "8", true_shade: ts[26]},
-  {brand: "e.l.f.", product: "Studio Flawless Finish Foundation", shade: "Coco #83116", true_shade: ts[26]}, 
-  {brand: "L’Oreal", product: "Magic Skin Beautifier B.B. Cream", shade: "814 Medium", true_shade: ts[19]},
-  {brand: "L'Oreal", product: "True Match Lumi Healthy Foundation", shade: "Buff Beige", true_shade: ts[19]},
-  {brand: "Kat Von D", product: "Lock-it Tattoo Foundation", shade: "Medium 54", true_shade: ts[19]},
-  {brand: "Revlon", product: "ColorStay Makeup For Combo/Oily Skin", shade: "350 Rich Tan", true_shade: ts[19]},
-  {brand: "Urban Decay", product: "Naked Skin Foundation", shade: "6.0", true_shade: ts[19]},
-  {brand: "Chanel", product: "Vitalumiere Aqua Ultra Light Skin Perfecting Make Up SFP 15", shade: "B30 Sable", true_shade: ts[13]},
-  {brand: "Neutrogena", product: "Healthy Skin Liquid Makeup Broad Spectrum SPF 20", shade: "Natural Beige", true_shade: ts[13]},
-  {brand: "Estee Lauder", product: "Double Wear Stay-in-Place Makeup", shade: "Sand 1W2", true_shade: ts[13]},
-  {brand: "Revlon", product: "Colorstay Combination/Oily SPF 6", shade: "280 Golden Beige", true_shade: ts[13]},
-  {brand: "Tarte", product: "Powderful Amazonian Clay Pressed Mineral Powder", shade: "Medium 08", true_shade: ts[13]}, 
-  {brand: "Revlon", product: "Nearly Naked", shade: "260 Caramel", true_shade: ts[23]},
-  {brand: "Liz Earle", product: "Signature Foundation", shade: "Caramel 07", true_shade: ts[23]},
-  {brand: "MAC", product: "Face and Body Foundation", shade: "C7", true_shade: ts[23]},
-  {brand: "NARS", product: "Sheer Matte", shade: "New Orleans", true_shade: ts[22]},
-  {brand: "MAC", product: "Studio Fix Fluid Foundation", shade: "NW45", true_shade: ts[22][25]},
-  {brand: "e.l.f.", product: "Tinted Moisturizer", shade: "Espresso", true_shade: ts[22]},
-  {brand: "Iman", product: "Second to None Luminous Foundation", shade: "Earth 2", true_shade: ts[22]},
-  {brand: "CoverGirl", product: "Queen Collection 3 in 1 Foundation", shade: "Q840 Almond Glow", true_shade: ts[25]},
-  {brand: "Revlon", product: "ColorStay Makeup For Combo/Oily Skin", shade: "440 Mahogany", true_shade: ts[25]},
-  {brand: "MAC", product: "Studio Sculpt Foundation", shade: "NW20", true_shade: ts[6]},
-  {brand: "Rimmel", product: "Wake Me Up Foundation", shade: "True Ivory", true_shade: ts[6]},
-  # {name: "Bobbi Brown BB Cream SPF 35 Medium", brand: "Bobbi", product: "Brown BB Cream SPF 35", shade: "Medium", true_shade: ts[19]},
-  {brand: "Make Up For Ever", product: "HD Invisible Cover Foundation", shade: "140", true_shade: ts[14]},
-  {brand: "Make Up For Ever", product: "Mat Velvet + Matifying Foundation", shade: "40", true_shade: ts[14]},
-  {brand: "Urban Decay", product: "Naked Skin Foundation", shade: "4.0", true_shade: ts[14]}
+  # {brand: "Giorgio Armani", product: "Luminous Silk Foundation", shade: "13", true_shade: ts[26]},
+  # {brand: "NARS", product: "Sheer Glow Foundation", shade: "Benares", true_shade: ts[26]},
+  # {brand: "NARS", product: "Sheer Matte Foundation", shade: "Benares", true_shade: ts[26]},
+  # {brand: "Make Up For Ever", product: "Mat Velvet + Matifying Foundation", shade: "75", true_shade: ts[26][22]},
+  # {brand: "MAC", product: "Matchmaster SPF 15 Foundation", shade: "8", true_shade: ts[26]},
+  # {brand: "e.l.f.", product: "Studio Flawless Finish Foundation", shade: "Coco #83116", true_shade: ts[26]}, 
+  # {brand: "L’Oreal", product: "Magic Skin Beautifier B.B. Cream", shade: "814 Medium", true_shade: ts[19]},
+  # {brand: "L'Oreal", product: "True Match Lumi Healthy Foundation", shade: "Buff Beige", true_shade: ts[19]},
+  # {brand: "Kat Von D", product: "Lock-it Tattoo Foundation", shade: "Medium 54", true_shade: ts[19]},
+  # {brand: "Revlon", product: "ColorStay Makeup For Combo/Oily Skin", shade: "350 Rich Tan", true_shade: ts[19]},
+  # {brand: "Urban Decay", product: "Naked Skin Foundation", shade: "6.0", true_shade: ts[19]},
+  # {brand: "Chanel", product: "Vitalumiere Aqua Ultra Light Skin Perfecting Make Up SFP 15", shade: "B30 Sable", true_shade: ts[13]},
+  # {brand: "Neutrogena", product: "Healthy Skin Liquid Makeup Broad Spectrum SPF 20", shade: "Natural Beige", true_shade: ts[13]},
+  # {brand: "Estee Lauder", product: "Double Wear Stay-in-Place Makeup", shade: "Sand 1W2", true_shade: ts[13]},
+  # {brand: "Revlon", product: "Colorstay Combination/Oily SPF 6", shade: "280 Golden Beige", true_shade: ts[13]},
+  # {brand: "Tarte", product: "Powderful Amazonian Clay Pressed Mineral Powder", shade: "Medium 08", true_shade: ts[13]}, 
+  {brand: "Revlon", product: "Nearly Naked", shade: "260 Caramel", true_shade: ts[23], image: File.open(Rails.root + "app/assets/images/katvond.jpg")},
+  # {brand: "Liz Earle", product: "Signature Foundation", shade: "Caramel 07", true_shade: ts[23]},
+  # {brand: "MAC", product: "Face and Body Foundation", shade: "C7", true_shade: ts[23]},
+  # {brand: "NARS", product: "Sheer Matte", shade: "New Orleans", true_shade: ts[22]},
+  # {brand: "MAC", product: "Studio Fix Fluid Foundation", shade: "NW45", true_shade: ts[22][25]},
+  # {brand: "e.l.f.", product: "Tinted Moisturizer", shade: "Espresso", true_shade: ts[22]},
+  # {brand: "Iman", product: "Second to None Luminous Foundation", shade: "Earth 2", true_shade: ts[22]},
+  # {brand: "CoverGirl", product: "Queen Collection 3 in 1 Foundation", shade: "Q840 Almond Glow", true_shade: ts[25]},
+  # {brand: "Revlon", product: "ColorStay Makeup For Combo/Oily Skin", shade: "440 Mahogany", true_shade: ts[25]},
+  # {brand: "MAC", product: "Studio Sculpt Foundation", shade: "NW20", true_shade: ts[6]},
+  # {brand: "Rimmel", product: "Wake Me Up Foundation", shade: "True Ivory", true_shade: ts[6]},
+  # # {name: "Bobbi Brown BB Cream SPF 35 Medium", brand: "Bobbi", product: "Brown BB Cream SPF 35", shade: "Medium", true_shade: ts[19]},
+  # {brand: "Make Up For Ever", product: "HD Invisible Cover Foundation", shade: "140", true_shade: ts[14]},
+  # {brand: "Make Up For Ever", product: "Mat Velvet + Matifying Foundation", shade: "40", true_shade: ts[14]},
+  # {brand: "Urban Decay", product: "Naked Skin Foundation", shade: "4.0", true_shade: ts[14]}
  
   ])
 
