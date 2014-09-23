@@ -1,6 +1,13 @@
 <%= current_user.brand %>
+<%= current_user.product %>
+<%= current_user.shade %>
+
+<br><br><%= current_user.true_shade.name %>
+<br><%= current_user.true_shade.description %>
+
 
 <!-- ts = TrueShade.where('makeup.brand') -->
+
 
 
 <br><%= link_to 'Add new makeup', makeups_path %>

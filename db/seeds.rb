@@ -63,8 +63,17 @@ makeups = Makeup.create([
   {brand: "Make Up For Ever", product: "HD Invisible Cover Foundation", shade: "140", true_shade: ts[14]},
   {brand: "Make Up For Ever", product: "Mat Velvet + Matifying Foundation", shade: "40", true_shade: ts[14]},
   {brand: "Urban Decay", product: "Naked Skin Foundation", shade: "4.0", true_shade: ts[14]}
- 
   ])
+
+
+# images 
+
+# makeup = Makeup.find(1)
+# file = File.open("db/seeds/images/katvond.jpg", "rb").read
+# makeup.makeup_image = file
+# makeup.save!
+
+
 
 # my_id = true_shade.find([:name])
 # true_shade_id:"[true_shade.id]"

@@ -19,6 +19,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
+    my_makeup = Makeup.where(brand:@user.brand, product:@user.product, shade:@user.shade).first
+    @user.true_shade = my_makeup.true_shade
+    
     # respond_to do |format|
     #   if @user.save
     #     flash[:notice] = 'User was successfully created.'
@@ -63,6 +67,6 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(
-      :name, :email, :password, :password_confirmation, :brand, :product, :shade, :true_shade, :user_makeup_attributes => [:id, :makeup_id])
+      :name, :email, :password, :password_confirmation, :brand, :product, :shade, :true_shade)
   end
 end

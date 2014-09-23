@@ -20,7 +20,13 @@
         </div>
 
           <div class="form-group">
-          <%= f.collection_select :brand, Makeup.all, :makeup_name, :makeup_name, placeholder: "makeup" %>
+          <%= f.collection_select :brand, Makeup.all, :brand, :brand, placeholder: "makeup" %>
+          </div>
+          <div class="form-group">
+          <%= f.collection_select :product, Makeup.all, :product, :product, placeholder: "makeup" %>
+          </div>
+          <div class="form-group">
+          <%= f.collection_select :shade, Makeup.all, :shade, :shade, placeholder: "makeup" %>
           </div>
         <div class="form-group"> 
           <%= f.submit "Sign up" %>
